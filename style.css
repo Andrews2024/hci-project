@@ -1,0 +1,33 @@
+p {
+    font-family: Raleway;
+}
+
+nav {
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-size: x-large;
+    margin: auto;
+    background-color: #F1C164;
+    text-align: center;
+}
+
+#nav ul { /*Center nav menu*/
+    display: inline-block;
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    background-color: #F1C164;
+    padding: 20px;
+}
+
+a {
+    color: black;
+}
+
+h1 {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: xx-large;
+}
