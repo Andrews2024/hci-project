@@ -12,12 +12,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8"/>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <!--Nav bar-->
-        <nav>
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -27,11 +28,17 @@
 
         <!--WPI Logo-->
         <h1>Where Put I?</h1>
-        <p>Description of the website and what it's for and what it does</p>
+        <h2>Find your lost items and help others find theirs.</h2>
+        <p>This website is for members of the WPI community to help them find things they lost.
+            The directory shows items that have been turned into our official lost and found centers on campus.
+            The forum page is where community members can post about items they lost or found.
+        </p>
 
         <!--Buttons to directory and forum-->
-        <button type="button"><a href="directory.html">Directory</a></button>
-        <button type="button"><a href="forum.html">Forum</a></button>
+        <div id="home-buttons">
+            <button type="button"><a href="directory.html">Directory</a></button>
+            <button type="button"><a href="forum.html">Forum</a></button>
+        </div>
     </body>
 
     <footer>
