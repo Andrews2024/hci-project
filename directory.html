@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Where Put I?</title>
+        <title>Where Put I? - Directory</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" type="text/javascript"></script>
     </head>
 
     <body>
         <!--Nav bar-->
-        <nav>
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -15,10 +28,43 @@
         </nav>
         
         <!--Dropdown menus for collection centers-->
-        <button type="button">Campus Center</button>
+        <button type="button" class="dropdown" onclick="toggleDropdown('cc-drop');">Campus Center</button>
+        <div class="dropdown-container" id="cc-drop">
+            <div class="dropdown-item">
+                <label>Item: Water bottle</label><br>
+                <label>Found: Higgins</label><br>
+                <label>Turned In: 03/29/24</label><br>
+                <label>Location: Campus Center</label>
+            </div>
+
+            <div class="dropdown-item">
+                <label>Item: Sweatshirt</label><br>
+                <label>Found: Higgins</label><br>
+                <label>Turned In: 03/31/24</label><br>
+                <label>Location: Campus Center</label>
+            </div>
+        </div>
+
+        <button type="button" class="dropdown" onclick="toggleDropdown('campo-drop');">WPI Police</button>
+        <div class="dropdown-container" id="campo-drop">
+            <div class="dropdown-item">
+                <label>Item: iPhone 7</label><br>
+                <label>Found: Unity Hall</label><br>
+                <label>Turned In: 03/29/24</label><br>
+                <label>Location: WPI Police</label>
+            </div>
+
+            <div class="dropdown-item">
+                <label>Item: Sweatshirt</label><br>
+                <label>Found: Higgins</label><br>
+                <label>Turned In: 04/02/24</label><br>
+                <label>Location: WPI Police</label>
+            </div>
+        </div>
     </body>
 
     <footer>
-        <!--Yellow, maybe with some notes?-->
+        <img width=auto height=75 src="WPI_Inst_Prim_BLK.png">
+        <p class="disclaimer">Disclaimer: This is not an official WPI website.</p>
     </footer>
 </html>

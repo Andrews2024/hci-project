@@ -109,3 +109,26 @@ footer {
     text-align: center;
     padding-top: 25px;
 }
+
+/*Stuff added for Directory page*/
+.dropdown {
+    align-self: center;
+    width: 90vw;
+    height: 50px;
+    margin: 15px 0;
+}
+
+.dropdown-container {
+    outline: black solid 2px;
+    width: 80vw;
+    align-self: center;
+    padding: 5px;
+    display: none; /*Hidden by default*/
+    margin: 10px;
+}
+
+.dropdown-item {
+    margin: 10px;
+    outline: #AC2B37 solid 1px;
+    padding: 5px;
+}
