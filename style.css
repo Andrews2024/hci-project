@@ -129,12 +129,14 @@ footer {
     padding: 5px;
     display: none; /*Hidden by default*/
     margin: 10px;
+    flex-wrap: wrap;
 }
 
 .dropdown-item {
-    margin: 10px;
+    margin: 10px auto;
     outline: #AC2B37 solid 1px;
     padding: 5px;
+    min-width: 35vw;
 }
 
 /* Stuff I added for Forum page*/
