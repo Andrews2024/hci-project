@@ -163,3 +163,55 @@ label {
 }
 
 /* Stuff I added for Forum page*/
+#reporting-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 1vh 0;
+}
+
+#reporting-buttons button {
+    height: auto;
+    width: 25vw;
+    padding: 5px 10px;
+}
+
+#post-container {
+    display: flex;
+    justify-content: center;
+}
+
+.forum {
+    outline: 2px solid black;
+    width: 45vw;
+    max-height: 75vh;
+    min-height: 50vh;
+    overflow-y: scroll;
+    margin: 2vh 1vw;
+}
+
+.forum-item {
+    margin: 10px 5px;
+    outline: #AC2B37 solid 2px;
+    padding: 5px;
+    min-width: 25vw;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+.forum-item label {
+    font-size: 20px;
+}
+
+.forum-labels {
+    margin: auto 1vw;
+}
+
+.forum-image img {
+    width: 7vw;
+}
+
+.forum h1 {
+    font-size: 36px;
+    padding: 18px
+}
