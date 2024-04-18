@@ -187,6 +187,7 @@ label {
     min-height: 50vh;
     overflow-y: scroll;
     margin: 2vh 1vw;
+    box-shadow: 0 0 4px black;
 }
 
 .forum-item {
@@ -214,4 +215,47 @@ label {
 .forum h1 {
     font-size: 36px;
     padding: 18px
+}
+
+/* Stuff I added for the forms */
+form {
+    margin: 5vh auto;
+    width: 50vw;
+    outline: white solid 1px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    display: none; /* Hidden by default */
+    flex-flow: column wrap;
+}
+
+input {
+    width: 30vw;
+    outline: solid 1px black;
+    font-size: 24px;
+    font-family: Raleway;
+    margin: 10px;
+}
+
+input[type="submit"] {
+    background-color: #fdf7ec;
+    margin: 2vh auto;
+    padding: 5px;
+    outline: solid 5px #F1C164;
+    transition-duration: .25s;
+    box-shadow: 2px 2px 5px black;
+}
+
+input[type="submit"]:hover {
+    background-color: #F1C164;
+    box-shadow: 3px 3px 5px black;
+    transition-duration: .25s;
+}
+
+input[type="file"] {
+    outline: none;
+}
+
+form h1 {
+    font-size: 36px;
 }
