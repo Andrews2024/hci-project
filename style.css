@@ -220,13 +220,14 @@ label {
 /* Stuff I added for the forms */
 form {
     margin: 5vh auto;
-    width: 50vw;
+    width: 60vw;
     outline: white solid 1px;
     background-color: white;
     border-radius: 5px;
     padding: 20px;
     display: none; /* Hidden by default */
     flex-flow: column wrap;
+    position: relative;
 }
 
 input {
@@ -254,8 +255,20 @@ input[type="submit"]:hover {
 
 input[type="file"] {
     outline: none;
+    width: 20vw;
 }
 
 form h1 {
     font-size: 36px;
+}
+
+form img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+}
+
+form img:hover {
+    box-shadow: 0 0 3px black;
 }
