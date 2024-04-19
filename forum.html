@@ -30,7 +30,7 @@
         <!--Buttons for reporting items-->
         <div id="reporting-buttons">
             <button type="button" onclick="openForm('found-form');">I Found Something</button>
-            <button type="button">I Lost Something</button>
+            <button type="button" onclick="openForm('lost-form');">I Lost Something</button>
         </div>
         
         <div id="post-container">
@@ -114,7 +114,26 @@
             <button type="button" onclick="postFoundItem();">Post to Forum</button>
         </form>
 
-        
+        <form id="lost-form">
+            <img src="cross.svg" onclick="closeForm('lost-form');">
+            <h1>Report a Lost Item</h1>
+            <div>
+                <label for="item-desc-lost">Item:</label>
+                <input type="text" id="item-desc-lost" name="item">
+            </div>
+            
+            <div>
+                <label for="location-found">Last Seen:</label>
+                <input type="text" id="last-seen" name="location">
+            </div>
+
+            <div>
+                <label for="found-img">Upload Image:</label>
+                <input type="file" id="lost-img" name="img" accept="image/*">
+            </div>
+            
+            <button type="button" onclick="postLostItem();">Post to Forum</button>
+        </form>
         
     </body>
 
