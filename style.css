@@ -220,7 +220,7 @@ label {
 /* Stuff I added for the forms */
 form {
     margin: 5vh auto;
-    width: 60vw;
+    width: 40vw;
     outline: white solid 1px;
     background-color: white;
     border-radius: 5px;
@@ -238,18 +238,19 @@ input {
     margin: 10px;
 }
 
-input[type="submit"] {
-    background-color: #fdf7ec;
-    margin: 2vh auto;
-    padding: 5px;
-    outline: solid 5px #F1C164;
+form button {
+    margin: 3vh auto;
+    height: 60px;
+    outline: solid 5px #AC2B37;
+    background-color: #AC2B37;
     transition-duration: .25s;
     box-shadow: 2px 2px 5px black;
 }
 
-input[type="submit"]:hover {
-    background-color: #F1C164;
-    box-shadow: 3px 3px 5px black;
+form button:hover {
+    background-color: #AC2B37;
+    color: white;
+    box-shadow: 3px 3px 7px black;
     transition-duration: .25s;
 }
 

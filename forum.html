@@ -17,7 +17,7 @@
         <script src="script.js" type="text/javascript"></script>
     </head>
 
-    <body>
+    <body onload="resetAllForms();">
         <!--Nav bar-->
         <nav class="main-nav">
             <ul>
@@ -35,8 +35,8 @@
         
         <div id="post-container">
             <!--Found Items-->
-            <div class="forum">
-                <h1>Found Items</h1>
+            <div class="forum" id="found-items">
+                <h1 id="found-header">Found Items</h1>
 
                 <div class="forum-item">
                     <div class="forum-image">
@@ -45,7 +45,7 @@
                     <div class="forum-labels">
                         <label><b>Item</b>: Lenovo 65W Barrel-jack Charger</label><br>
                         <label><b>Location</b>: HL 116 in the back left</label><br>
-                        <label><b>Found On</b>: 04/05/24</label><br>
+                        <label><b>Found On</b>: 4/7/2024</label><br>
                         <label><b>Email Me</b>: user@wpi.edu</label>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div class="forum-labels">
                         <label><b>Item</b>: Black WPI Hat</label><br>
                         <label><b>Location</b>: Campus Center Odeum</label><br>
-                        <label><b>Found On</b>: 04/07/24</label><br>
+                        <label><b>Found On</b>: 4/5/2024</label><br>
                         <label><b>Email Me</b>: user2@wpi.edu</label>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
             
             <!--Lost Items-->
             <div class="forum">
-                <h1>Lost Items</h1>
+                <h1 id="lost-header">Lost Items</h1>
 
                 <div class="forum-item">
                     <div class="forum-image">
@@ -74,7 +74,7 @@
                     <div class="forum-labels">
                         <label><b>Item</b>: Lenovo 65W Barrel-jack Charger</label><br>
                         <label><b>Last Seen</b>: HL 116 in the back left</label><br>
-                        <label><b>Lost On</b>: 04/05/24</label><br>
+                        <label><b>Lost On</b>: 4/5/2024</label><br>
                         <label><b>Email Me</b>: user@wpi.edu</label>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                     <div class="forum-labels">
                         <label><b>Item</b>: Black WPI Hat</label><br>
                         <label><b>Last Seen</b>: Campus Center Odeum</label><br>
-                        <label><b>Lost On</b>: 04/07/24</label><br>
+                        <label><b>Lost On</b>: 4/7/2024</label><br>
                         <label><b>Email Me</b>: user2@wpi.edu</label>
                     </div>
                 </div>
@@ -102,16 +102,16 @@
             </div>
             
             <div>
-                <label for="location">Found:</label>
-                <input type="text" id="location" name="location">
+                <label for="location-found">Found:</label>
+                <input type="text" id="location-found" name="location">
             </div>
 
             <div>
-                <label for="img">Upload Image:</label>
-                <input type="file" id="img" name="img" accept="image/*">
+                <label for="found-img">Upload Image:</label>
+                <input type="file" id="found-img" name="img" accept="image/*">
             </div>
             
-            <input type="submit" value="Post to Forum">
+            <button type="button" onclick="postFoundItem();">Post to Forum</button>
         </form>
 
         
