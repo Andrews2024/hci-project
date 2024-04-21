@@ -18,9 +18,9 @@ p {
     font-family: Raleway;
     font-size: 24px;
     text-align: justify;
-    width: 66vw;
+    width: 60vw;
     margin: auto;
-    padding-top: 10px;
+    padding: 10px;
 }
 
 .main-nav {
@@ -83,7 +83,7 @@ body {
 #home-buttons {
     display: flex;
     justify-content: center;
-    padding: 100px 0;
+    padding: 5vh 0;
 }
 
 button {
@@ -94,7 +94,7 @@ button {
     font-size: 36px;
     cursor: pointer;
     display: inline-block;
-    margin: 0 100px;
+    margin: 2vh 100px;
     transition-duration: .5s;
     box-shadow: 2px 2px 5px black;
 }
@@ -108,7 +108,7 @@ footer {
     text-align: center;
     background-color: #A9B0B7;
     padding: 15px;
-    margin-top: auto;
+    margin-top: 2vh;
 }
 
 .disclaimer {
@@ -118,6 +118,11 @@ footer {
 }
 
 /*Stuff added for Directory page*/
+.instructions {
+    width: 42vw;
+    text-align: center;
+}
+
 .dropdown {
     align-self: center;
     width: 90vw;
@@ -143,6 +148,9 @@ footer {
     display: flex;
     flex-direction: row;
     background-color: white;
+}
+.dropdown-image {
+    display: flex;
 }
 
 img {

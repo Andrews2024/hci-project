@@ -58,7 +58,7 @@ function postFoundItem() {
     let image = document.getElementById("found-img");
 
     // Strip "C:\fakepath\" from input image"
-    let imageFile = image.value.replace("C:\\fakepath\\", '');
+    let imageFile = image.value.replace("C:\\fakepath\\", 'images/');
 
     // Validate form entries before continuing
     if (!validateFoundForm(itemText.value, foundLocation.value, imageFile)) {
@@ -127,10 +127,10 @@ function postLostItem() {
     let date = new Date().toLocaleDateString();
 
     // Strip "C:\fakepath\" from input image"
-    let imageFile = image.value.replace("C:\\fakepath\\", '');
+    let imageFile = image.value.replace("C:\\fakepath\\", 'images/');
 
     if (imageFile == '') { // Use placeholder image
-        imageFile = 'gallery.svg';
+        imageFile = 'images/gallery.svg';
     }
 
     // Make forum-post div and add to Lost Items
