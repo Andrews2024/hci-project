@@ -58,7 +58,7 @@ function postFoundItem() {
     let image = document.getElementById("found-img");
 
     // Strip "C:\fakepath\" from input image"
-    let imageFile = image.value.replace("C:\\fakepath\\", 'images/');
+    let imageFile = image.value.replace("C:\\fakepath\\", '');
 
     // Validate form entries before continuing
     if (!validateFoundForm(itemText.value, foundLocation.value, imageFile)) {
@@ -73,7 +73,7 @@ function postFoundItem() {
     // Currently ignoring because this is a project to be locally hosted only
     let newItem = `<div class="forum-item">
                     <div class="forum-image">
-                        <img src="${imageFile}">
+                        <img src="images/${imageFile}">
                     </div>
                     <div class="forum-labels">
                         <label><b>Item</b>: ${itemText.value}</label><br>
