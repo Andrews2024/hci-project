@@ -208,6 +208,10 @@ label {
     margin: auto 1vw;
 }
 
+.forum-image {
+    display: flex;
+}
+
 .forum-image img {
     width: 7vw;
 }

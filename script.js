@@ -18,8 +18,6 @@ function openForm(formName) {
 };
 
 function closeForm(formName) {
-    // Reset error messages
-
     // Close the form
     let form = document.getElementById(formName);
     form.style.display = 'none';
@@ -31,7 +29,6 @@ function closeForm(formName) {
 
 function validateFoundForm(description, location, image) {
     let valid = true;
-    console.log(description, location, image);
 
     // Check that each input is valid
     // For each invalid input, unhide the error message
@@ -59,7 +56,6 @@ function postFoundItem() {
     let itemText = document.getElementById("item-desc");
     let foundLocation = document.getElementById("location-found");
     let image = document.getElementById("found-img");
-    console.log(itemText.value, foundLocation.value, image.value);
 
     // Strip "C:\fakepath\" from input image"
     let imageFile = image.value.replace("C:\\fakepath\\", '');
@@ -97,18 +93,45 @@ function postFoundItem() {
     closeForm("found-form");
 };
 
+function validateLostForm(description, location) {
+    let valid = true;
+
+    // Check that each input is valid
+    // For each invalid input, unhide the error message
+    if (description == '') {
+        document.getElementById('lost-desc-error').style.display = 'block';
+        valid = false;
+    } else { document.getElementById('lost-desc-error').style.display = 'none'; } // Hide error message if input is good
+    
+    if (location == '') {
+        document.getElementById('last-seen-error').style.display = 'block';
+        valid = false;
+    } else { document.getElementById('last-seen-error').style.display = 'none'; } // Hide error message if input is good
+    
+    // Return False for invalid, True for valid
+    return valid;
+};
+
 function postLostItem() {
     // Get inputs as strings
     let itemText = document.getElementById("item-desc-lost");
-    let foundLocation = document.getElementById("last-seen");
+    let lostLocation = document.getElementById("last-seen");
     let image = document.getElementById("lost-img");
-    console.log(itemText.value, foundLocation.value, image.value);
+
+    // Validate form input before continuing
+    if (!validateLostForm(itemText.value, lostLocation.value)) {
+        return;
+    }
 
     // Get today's date in M/D/YYYY format
     let date = new Date().toLocaleDateString();
 
     // Strip "C:\fakepath\" from input image"
     let imageFile = image.value.replace("C:\\fakepath\\", '');
+
+    if (imageFile == '') { // Use placeholder image
+        imageFile = 'gallery.svg';
+    }
 
     // Make forum-post div and add to Lost Items
     // NOTE: NOT GOOD PRACTICE -- LEADS TO XSS ATTACKS
@@ -119,7 +142,7 @@ function postLostItem() {
                     </div>
                     <div class="forum-labels">
                         <label><b>Item</b>: ${itemText.value}</label><br>
-                        <label><b>Last Seen</b>: ${foundLocation.value}</label><br>
+                        <label><b>Last Seen</b>: ${lostLocation.value}</label><br>
                         <label><b>Lost On</b>: ${date}</label><br>
                         <label><b>Email Me</b>: tester@wpi.edu</label>
                     </div>
@@ -130,9 +153,9 @@ function postLostItem() {
 
     // Reset fields and close the form
     itemText.value = '';
-    foundLocation.value = '';
+    lostLocation.value = '';
     image.value = '';
-    closeForm("found-form");
+    closeForm("lost-form");
 };
 
 function resetAllForms() {
