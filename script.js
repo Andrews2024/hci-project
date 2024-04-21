@@ -4,6 +4,10 @@ function toggleDropdown(dropdownName) {
 };
 
 function openForm(formName) {
+    // Close any open forms
+    closeForm("lost-form");
+    closeForm("found-form");
+
     // Open the form
     let form = document.getElementById(formName);
     form.style.display = 'flex';
@@ -14,6 +18,8 @@ function openForm(formName) {
 };
 
 function closeForm(formName) {
+    // Reset error messages
+
     // Close the form
     let form = document.getElementById(formName);
     form.style.display = 'none';
@@ -23,6 +29,31 @@ function closeForm(formName) {
     forum.style.display = 'flex';
 };
 
+function validateFoundForm(description, location, image) {
+    let valid = true;
+    console.log(description, location, image);
+
+    // Check that each input is valid
+    // For each invalid input, unhide the error message
+    if (description == '') {
+        document.getElementById('found-desc-error').style.display = 'block';
+        valid = false;
+    } else { document.getElementById('found-desc-error').style.display = 'none'; } // Hide error message if input is good
+    
+    if (location == '') {
+        document.getElementById('location-found-error').style.display = 'block';
+        valid = false;
+    } else { document.getElementById('location-found-error').style.display = 'none'; } // Hide error message if input is good
+    
+    if (image == '') {
+        document.getElementById('found-img-error').style.display = 'block';
+        valid = false;
+    } else { document.getElementById('found-img-error').style.display = 'none'; } // Hide error message if input is good
+    
+    // Return False for invalid, True for valid
+    return valid;
+};
+
 function postFoundItem() {
     // Get inputs as strings
     let itemText = document.getElementById("item-desc");
@@ -30,11 +61,16 @@ function postFoundItem() {
     let image = document.getElementById("found-img");
     console.log(itemText.value, foundLocation.value, image.value);
 
-    // Get today's date in M/D/YYYY format
-    let date = new Date().toLocaleDateString();
-
     // Strip "C:\fakepath\" from input image"
     let imageFile = image.value.replace("C:\\fakepath\\", '');
+
+    // Validate form entries before continuing
+    if (!validateFoundForm(itemText.value, foundLocation.value, imageFile)) {
+        return;
+    }
+
+    // Get today's date in M/D/YYYY format
+    let date = new Date().toLocaleDateString();
 
     // Make forum-post div and add to Found Items
     // NOTE: NOT GOOD PRACTICE -- LEADS TO XSS ATTACKS

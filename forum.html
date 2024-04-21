@@ -98,17 +98,22 @@
             <h1>Report a Found Item</h1>
             <div>
                 <label for="item-desc">Item:</label>
-                <input type="text" id="item-desc" name="item">
+                <input type="text" id="item-desc" name="item"
+                placeholder="Describe the item you found (required).">
+                <p class="error" id="found-desc-error">Please enter an item description.</p>
             </div>
             
             <div>
                 <label for="location-found">Found:</label>
-                <input type="text" id="location-found" name="location">
+                <input type="text" id="location-found" name="location"
+                placeholder="Where did you find it (required)?">
+                <p class="error" id="location-found-error">Please enter where you found the item.</p>
             </div>
 
             <div>
-                <label for="found-img">Upload Image:</label>
+                <label for="found-img">Upload Image (required):</label>
                 <input type="file" id="found-img" name="img" accept="image/*">
+                <p class="error" id="found-img-error">Please upload an image of the item.</p>
             </div>
             
             <button type="button" onclick="postFoundItem();">Post to Forum</button>
@@ -119,12 +124,14 @@
             <h1>Report a Lost Item</h1>
             <div>
                 <label for="item-desc-lost">Item:</label>
-                <input type="text" id="item-desc-lost" name="item">
+                <input type="text" id="item-desc-lost" name="item"
+                placeholder="Describe the lost item (required).">
             </div>
             
             <div>
                 <label for="location-found">Last Seen:</label>
-                <input type="text" id="last-seen" name="location">
+                <input type="text" id="last-seen" name="location"
+                placeholder="Where did you have it last (required)?">
             </div>
 
             <div>

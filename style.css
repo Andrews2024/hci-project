@@ -191,7 +191,7 @@ label {
 }
 
 .forum-item {
-    margin: 10px 5px;
+    margin: 10px;
     outline: #AC2B37 solid 2px;
     padding: 5px;
     min-width: 25vw;
@@ -272,4 +272,13 @@ form img {
 
 form img:hover {
     box-shadow: 0 0 3px black;
+}
+
+.error {
+    color: red;
+    font-size: 16px;
+    margin: 0;
+    padding: 0 0 15px 0;
+    width: 30vw;
+    display: none;
 }
