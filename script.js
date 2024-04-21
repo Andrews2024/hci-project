@@ -51,6 +51,7 @@ function validateFoundForm(description, location, image) {
     return valid;
 };
 
+var idNum = 0;
 function postFoundItem() {
     // Get inputs as strings
     let itemText = document.getElementById("item-desc");
@@ -71,7 +72,8 @@ function postFoundItem() {
     // Make forum-post div and add to Found Items
     // NOTE: NOT GOOD PRACTICE -- LEADS TO XSS ATTACKS
     // Currently ignoring because this is a project to be locally hosted only
-    let newItem = `<div class="forum-item">
+    let newItem = `<div class="forum-item" id="post-${idNum}">
+                    <img class="delete" src="images/cross.svg" onclick="removePost('post-${idNum}');">
                     <div class="forum-image">
                         <img src="images/${imageFile}">
                     </div>
@@ -87,6 +89,7 @@ function postFoundItem() {
     foundContainer.insertAdjacentHTML("afterend", newItem);
 
     // Reset fields and close the form
+    idNum++; // Increment idNum for next post
     itemText.value = '';
     foundLocation.value = '';
     image.value = '';
@@ -136,7 +139,8 @@ function postLostItem() {
     // Make forum-post div and add to Lost Items
     // NOTE: NOT GOOD PRACTICE -- LEADS TO XSS ATTACKS
     // Currently ignoring because this is a project to be locally hosted only
-    let newItem = `<div class="forum-item">
+    let newItem = `<div class="forum-item" id="post-${idNum}">
+                    <img class="delete" src="images/cross.svg" onclick="removePost('post-${idNum}');">
                     <div class="forum-image">
                         <img src="${imageFile}">
                     </div>
@@ -152,6 +156,7 @@ function postLostItem() {
     foundContainer.insertAdjacentHTML("afterend", newItem);
 
     // Reset fields and close the form
+    idNum++; // Increment idNum
     itemText.value = '';
     lostLocation.value = '';
     image.value = '';
@@ -177,3 +182,7 @@ function resetAllForms() {
     lastSeen.value = '';
     lostImage.value = '';
 };
+
+function removePost(postID) {
+    document.getElementById(postID).remove();
+}
